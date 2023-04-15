@@ -17,7 +17,7 @@ Get all invoices headers
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `offset` | `int` | Default value is 0. |
-| `limit` | `int` |  **Required**. Default value is 10. |
+| `limit` | `int` |  Default value is 10. |
 
 #### Get details of invoice headers by given id.
 
