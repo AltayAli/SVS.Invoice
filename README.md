@@ -39,6 +39,43 @@ Get all invoices headers
 | :-------- | :------- | :-------------------------------- |
 | `file`      | `string($binary)` | **Required**. Permitted format is json. Other formats will be rejected. |
 
+Here is an example json file.
+
+```bash
+  {
+    "InvoiceHeader": {
+      "InvoiceId": "SVS202300000001",
+      "SenderTitle": "Gönderici Firma",
+      "ReceiverTitle": "Alıcı Firma",
+      "Date": "2023-01-05"
+    },
+    "InvoiceLine": [
+        {
+        "Id": 1,
+        "Name": "1.Ürün",
+        "Quantity": 5,
+        "UnitCode": "Adet",
+        "UnitPrice": 10
+        },
+        {
+        "Id": 2,
+        "Name": "2.Ürün",
+        "Quantity": 2,
+        "UnitCode": "Litre",
+        "UnitPrice": 3
+        },
+        {
+        "Id": 3,
+        "Name": "3.Ürün",
+        "Quantity": 25,
+        "UnitCode": "Kilogram",
+        "UnitPrice": 2
+        }
+    ]
+}
+```
+
+
 After you load the file, the system saves it to the database, then the background job will read data and write them to the appropriate tables. Background job runs automatically by every 30 minutes. After the process, detailed information about the process will be sent to the email specified in the EmailSettings>SendMail property in appsettings.json or appsettings.Development.json. Because of that please check the configurations.
 
 
