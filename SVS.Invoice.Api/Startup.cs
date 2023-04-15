@@ -31,11 +31,13 @@ namespace SVS.Invoice.Api
 
             services.AddControllers();
 
-            services
-                .AddDbContext<AppDbContext>(x => x.UseSqlServer(_config.GetConnectionString("DataConnection")));
+            services.AddDbContext<AppDbContext>(x => x.UseSqlServer(_config.GetConnectionString("DataConnection")));
 
             services.AddScoped<IBaseRepo, BaseRepo>();
             services.AddScoped<IFileOperationsService, FileOperationsService>();
+
+            #region AutoMapper configuration 
+
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new InvoiceProfile());
@@ -44,16 +46,23 @@ namespace SVS.Invoice.Api
             IMapper mapper = mapperConfig.CreateMapper();
             services.AddSingleton(mapper);
 
+            #endregion
+
+            #region Hangfire configuration
             services.AddHangfire(configuration => {
                 configuration.UseSqlServerStorage(_config.GetConnectionString("DataConnection"));
                 RecurringJob.AddOrUpdate<HangfireJob>(x => x.LoadRecords(), "*/30 * * * *");
             });
 
             services.AddHangfireServer();
+            #endregion
 
+            #region Mail setting configuration
             services.Configure<MailSettings>(_config.GetSection("EmailSettings"))
                         .AddScoped<IEmailSender, EmailSender>();
+            #endregion
 
+            #region Swagger configuration
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SVS.Invoice.Api", Version = "v1" });
@@ -61,6 +70,7 @@ namespace SVS.Invoice.Api
                 var filePath = Path.Combine(System.AppContext.BaseDirectory, "SVS.Invoice.Api.xml");
                 c.IncludeXmlComments(filePath);
             });
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -82,7 +92,6 @@ namespace SVS.Invoice.Api
             app.UseHangfireDashboard("/dashboard/hangfire", new DashboardOptions
             {
                 DashboardTitle = "SVS hangfire dashboard"
-
             });
 
             app.UseEndpoints(endpoints =>
