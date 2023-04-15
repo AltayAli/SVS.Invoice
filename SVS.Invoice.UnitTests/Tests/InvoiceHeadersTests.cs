@@ -2,10 +2,10 @@
 using MockQueryable.Moq;
 using Moq;
 using NUnit.Framework;
+using SVS.Invoice.Models.Data;
+using SVS.Invoice.Models.Entities;
 using SVS.Invoice.UnitTests.Models;
 using SYS.Invoice.BLL.Infrastructure;
-using SYS.Invoice.Models.Data;
-using SYS.Invoice.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

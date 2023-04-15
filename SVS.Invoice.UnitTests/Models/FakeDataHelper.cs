@@ -1,4 +1,5 @@
-﻿using SYS.Invoice.Models.Entities;
+﻿using SVS.Invoice.Models.Entities;
+using SVS.Invoice.Models.Enums;
 using System;
 using System.Collections.Generic;
 
