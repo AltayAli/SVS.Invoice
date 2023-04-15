@@ -1,7 +1,7 @@
 
 # SVS.Invoice API
 
-This is .Net Core web API that serves for some kinds of invoices. The project consists of 1 Web API and 3 libraries serving it. Here are the details :  
+This is .Net Core web API that serves for some kinds of invoices. The project consists of 1 Web API and 3 libraries serving it. Here are the details:  
 
 ## SVS.Invoice.API
 
@@ -48,6 +48,7 @@ After you load the file, the system saves it to the database, then the backgroun
 You have to config some properties. Open appsettings.Developer.json file.
 - Update ConnectionStrings > DataConnection. Please select the connection string for MS SQL database.
 - Update EmailSettings.
+
 Finally you can run the application. When you run the application, database will automatically generate.
  
 # SYS.Invoice.BLL
