@@ -31,7 +31,7 @@ namespace SVS.Invoice.Api.Controllers
         /// <param name="limit">Default : 10</param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<ActionResult<List<InvoiceHeaderDto>>> GetHeaders(int offset, int limit)
+        public async Task<ActionResult<List<InvoiceHeaderDto>>> GetHeaders(int offset, int limit=10)
         {
             try
             {
