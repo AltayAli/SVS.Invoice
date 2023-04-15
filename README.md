@@ -51,25 +51,25 @@ Here is an example json file.
     },
     "InvoiceLine": [
         {
-        "Id": 1,
-        "Name": "1.Ürün",
-        "Quantity": 5,
-        "UnitCode": "Adet",
-        "UnitPrice": 10
+          "Id": 1,
+          "Name": "1.Ürün",
+          "Quantity": 5,
+          "UnitCode": "Adet",
+          "UnitPrice": 10
         },
         {
-        "Id": 2,
-        "Name": "2.Ürün",
-        "Quantity": 2,
-        "UnitCode": "Litre",
-        "UnitPrice": 3
+          "Id": 2,
+          "Name": "2.Ürün",
+          "Quantity": 2,
+          "UnitCode": "Litre",
+          "UnitPrice": 3
         },
         {
-        "Id": 3,
-        "Name": "3.Ürün",
-        "Quantity": 25,
-        "UnitCode": "Kilogram",
-        "UnitPrice": 2
+          "Id": 3,
+          "Name": "3.Ürün",
+          "Quantity": 25,
+          "UnitCode": "Kilogram",
+          "UnitPrice": 2
         }
     ]
 }
