@@ -45,7 +45,7 @@ After you load the file, the system saves it to the database, then the backgroun
 
 ## Configuration
 
-You have to config some properties. Open appsettings.Developer.json file.
+You have to config some properties. Open appsettings.json or appsettings.Developer.json file.
 - Update ConnectionStrings > DataConnection. Please select the connection string for MS SQL database.
 - Update EmailSettings.
 
