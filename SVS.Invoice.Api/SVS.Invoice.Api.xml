@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SVS.Invoice.Api</name>
+    </assembly>
+    <members>
+        <member name="M:SVS.Invoice.Api.Controllers.InvoiceHeadersController.GetHeaders(System.Int32,System.Int32)">
+            <summary>
+            Get all invoices headers
+            </summary>
+            <param name="offset">Default : 0</param>
+            <param name="limit">Default : 10</param>
+            <returns></returns>
+        </member>
+        <member name="M:SVS.Invoice.Api.Controllers.InvoiceHeadersController.GetHeadersDetail(System.String)">
+            <summary>
+            Get details of invoice headers by given id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SVS.Invoice.Api.Controllers.InvoiceRecordsController.Insert(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload invoice record as json
+            </summary>
+            <param name="file">Permitted format is json. Other formats will be rejected.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
